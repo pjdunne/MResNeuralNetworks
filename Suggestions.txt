@@ -1,6 +1,5 @@
 General:
 -Adding keywords at the beginning on notebooks
--Adding an outline of sections at beginning of each notebook
 -Make notes on topics along the way??
 
 **David Colling 2.1
@@ -8,10 +7,13 @@ General:
 -kNN not really explained and no resources linked to (https://www.ibm.com/topics/knn#:~:text=The%20k%2Dnearest%20neighbors%20algorithm%2C%20also%20known%20as%20KNN%20or,of%20an%20individual%20data%20point.)
 
 **Jarvist
--Week 8 neural network, add in a bit of explaination for why sigmoid and tanh functions are used as activations functions (https://www.baeldung.com/cs/sigmoid-vs-tanh-functions)
+-Week 8 neural network, add in a bit of explanation for why sigmoid and tanh functions are used as activations functions (https://www.baeldung.com/cs/sigmoid-vs-tanh-functions)
 -Week 8 Neural Networks assert cell
 - Small problem - formatting different from other code
 - explain what the weights do, maths relating to loss gradient
-- explaination of gradient decent (https://machinelearningmastery.com/gradient-descent-for-machine-learning/)
+- explanation of gradient decent (https://machinelearningmastery.com/gradient-descent-for-machine-learning/)
+
+**PD
+- Visualising CNN, missing explanation for a cell
 
 
