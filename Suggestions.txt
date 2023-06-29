@@ -1,5 +1,6 @@
 General:
 -Adding keywords at the beginning on notebooks
+-Adding an outline of sections at beginning of each notebook
 -Make notes on topics along the way??
 
 **David Colling 2.1
