@@ -5,6 +5,11 @@ General:
 **David Colling 2.1
 -Agents for reinforcement learning, not really a concept that is expanded upon or introduced (https://uk.mathworks.com/help/reinforcement-learning/ug/create-agents-for-reinforcement-learning.html)
 -kNN not really explained and no resources linked to (https://www.ibm.com/topics/knn#:~:text=The%20k%2Dnearest%20neighbors%20algorithm%2C%20also%20known%20as%20KNN%20or,of%20an%20individual%20data%20point.)
+-sklearn.preprocessing what this does in a red box
+-For polynomial regression, not sure what is being shown here
+- Ridge Regularisation
+- Lasso Regularisation
+- Elastic Net - (somewhere between the two)
 
 **Jarvist
 -Week 8 neural network, add in a bit of explanation for why sigmoid and tanh functions are used as activations functions (https://www.baeldung.com/cs/sigmoid-vs-tanh-functions)
