@@ -2,7 +2,10 @@ General:
 -Adding keywords at the beginning on notebooks
 -Make notes on topics along the way??
 
-**David Colling 2.1
+**David Colling Fitting Data 1.2
+-Expand about cost and loss functions if they are not in statistics notebooks
+
+**David Colling ML Basics 2.1
 -Agents for reinforcement learning, not really a concept that is expanded upon or introduced (https://uk.mathworks.com/help/reinforcement-learning/ug/create-agents-for-reinforcement-learning.html)
 -kNN not really explained and no resources linked to (https://www.ibm.com/topics/knn#:~:text=The%20k%2Dnearest%20neighbors%20algorithm%2C%20also%20known%20as%20KNN%20or,of%20an%20individual%20data%20point.)
 -sklearn.preprocessing what this does in a red box
