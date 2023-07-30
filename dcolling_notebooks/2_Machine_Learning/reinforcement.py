@@ -107,6 +107,7 @@ print("Average Reward over {} episodes: {}".format(num_episodes, average_reward)
 #%%-----------------------------------------------------------------------------
 # Q-learn Method - A method to access reinforcement learning
 # let player win
+# concept from - https://www.learndatasci.com/tutorials/reinforcement-q-learning-scratch-python-openai-gym/
 
 import random
 import numpy as np
@@ -143,10 +144,10 @@ def get_reward(user_choice, comp_choice):
         return -1  # Comp Win
 
 
-num_episodes = 15
+num_episodes = 20
 
 # the learning rate, Just like in supervised learning settings
-alpha = 0.3
+alpha = 0.2
 # discount rate, closer to 1 captures long-term effective reward
 gamma = 0.7
 # Instead of just selecting the best learned Q-value action,
@@ -212,4 +213,4 @@ def game_loop(num_episodes):
 
 game_loop(num_episodes)
 
-# %%
+#%%
