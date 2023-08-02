@@ -114,6 +114,11 @@ import numpy as np
 
 
 def users_choice():
+    """
+    The function `users_choice` prompts the user to enter their choice of "rock", "paper", or "scissors"
+    and returns the valid choice.
+    :return: the user's choice of "rock", "paper", or "scissors".
+    """
     print("Let's play rock, paper, scissors")
     while True:
         choice = input("Enter your choice (rock, paper, or scissors): ")
@@ -132,6 +137,17 @@ def comp_trial():
 
 
 def get_reward(user_choice, comp_choice):
+    """
+    The function "get_reward" determines the outcome of a rock-paper-scissors game between a user and a
+    computer, and returns a reward value based on the result.
+
+    :param user_choice: The choice made by the user. It can be "rock", "paper", or "scissors"
+    :param comp_choice: The choice made by the computer. It can be "rock", "paper", or "scissors"
+    :return: The function `get_reward` returns an integer value. It returns 0 if the user_choice and
+    comp_choice are the same, indicating a draw. It returns 1 if the user_choice beats the comp_choice,
+    indicating that the computer loses. It returns -1 if the comp_choice beats the user_choice,
+    indicating that the computer wins.
+    """
     if user_choice == comp_choice:
         return 0  # Draw
     elif (
@@ -162,6 +178,14 @@ options = ["rock", "paper", "scissors"]
 
 
 def action(state):
+    """
+    The function selects an action based on the epsilon-greedy policy using a Q-table.
+
+    :param state: The "state" parameter represents the current state of the system or environment in
+    which the agent is operating. It could be any relevant information or data that describes the
+    current situation or context
+    :return: The action that will be taken based on the current state.
+    """
     if random.uniform(0, 1) < epsilon:
         action = random.choice(options)
     else:
@@ -171,6 +195,18 @@ def action(state):
 
 
 def update_q_table(state, action, next_state, reward):
+    """
+    The function updates the Q-table based on the current state, action, next state, and reward using
+    the Q-learning algorithm.
+
+    :param state: The current state of the environment
+    :param action: The action parameter represents the action taken in the current state. It is used as
+    a key in the q_table dictionary to retrieve the corresponding Q-value
+    :param next_state: The next_state parameter represents the state that the agent transitions to after
+    taking the specified action in the current state
+    :param reward: The reward is the immediate reward received after taking the action in the current
+    state. It represents the feedback or evaluation of the action taken
+    """
     old_q_value = q_table.get((state, action), 0)
     next_max = max(
         [q_table.get((next_state, next_action), 0) for next_action in options]
@@ -185,6 +221,14 @@ def get_state(user_choice, comp_choice):
 
 
 def play_game(state):
+    """
+    The function "play_game" allows the user to play a game against a computer opponent using the
+    Q-learning algorithm.
+
+    :param state: The state parameter represents the current state of the game. It could be any
+    information that describes the current situation or configuration of the game
+    :return: the reward and the next state.
+    """
     user_choice = users_choice()
     comp_choice = action(state)  # using action selected by the Q-learning algorithm
 
@@ -200,6 +244,14 @@ def play_game(state):
 
 
 def game_loop(num_episodes):
+    """
+    The function `game_loop` runs a specified number of episodes of a game, accumulating the rewards and
+    calculating the average reward.
+
+    :param num_episodes: The parameter "num_episodes" represents the number of episodes or games that
+    will be played in the game loop. Each episode consists of playing a game and updating the state and
+    reward
+    """
     state = random.choice(options)  # random initial state
     total_reward = 0
     for _ in range(num_episodes):
