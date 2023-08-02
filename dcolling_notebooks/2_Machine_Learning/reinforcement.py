@@ -344,9 +344,12 @@ record = pd.DataFrame(
 slice_result = record.iloc[-10:, :]
 print(slice_result)
 
-wins = document_result[document_result["result"] == "win"]
-losses = document_result[document_result["result"] == "lose"]
-draws = document_result[document_result["result"] == "draw"]
+win = []
+lose = []
+draw = []
+
+for _ in win, lose, draw:
+    _ = document_result[document_result["result"] == "_"]
 
 
 # %%
@@ -356,16 +359,21 @@ document_result = ["win", "lose", "draw", "win", "lose", "draw", "win", "lose", 
 document_result = pd.DataFrame({"result": document_result})
 
 
-wins = document_result[document_result["result"] == "win"]
-losses = document_result[document_result["result"] == "lose"]
-draws = document_result[document_result["result"] == "draw"]
+# wins = document_result[document_result["result"] == "win"]
+# losses = document_result[document_result["result"] == "lose"]
+# draws = document_result[document_result["result"] == "draw"]
+
+win = []
+lose = []
+draw = []
+
 
 # for i in document_result["result"]:
 #     if i == "win":
 #         slice = document_result[document_result["result"] == "win"]
 #         wins.append(slice)
 
-print(wins)
+print(win)
 # %%
 import pandas as pd
 import numpy as np
