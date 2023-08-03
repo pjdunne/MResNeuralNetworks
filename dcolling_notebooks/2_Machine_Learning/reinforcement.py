@@ -93,7 +93,7 @@ def get_state(user_choice, comp_choice):
 
 contin_reward = []
 
-num_episodes = int(1000)
+num_episodes = int(1200)
 
 
 def game_loop(num_episodes):
@@ -112,6 +112,88 @@ def game_loop(num_episodes):
 
 
 game_loop(num_episodes)
+
+### visualising results
+x_var = np.linspace(0, num_episodes, num_episodes)
+plt.plot(x_var, contin_reward)
+plt.title("Reward Score Build-UP")
+plt.xlabel("Number of Iterations")
+plt.ylabel("Reward")
+plt.show()
+
+
+record = pd.DataFrame(
+    {
+        "Player's Choices": list_of_users_input,
+        "Computer's Choices": list_of_comps_input,
+        "Result": document_result,
+    }
+)
+
+slice_result = record.iloc[-10:, :]
+print(slice_result)
+
+#%%
+
+import random
+import numpy as np
+import matplotlib.pyplot as plt
+import pandas as pd
+
+
+def users_choice():
+    # print("Let's play rock, paper, scissors")
+    choice = random.choice(options)
+    # choice = "rock"
+    return choice
+
+
+options = ["rock", "paper", "scissors"]
+
+document_result = []
+
+
+def get_reward(user_choice, comp_choice):
+    if user_choice == comp_choice:
+        document_result.append("draw")
+        return 0  # Draw
+    elif (
+        (user_choice == "rock" and comp_choice == "scissors")
+        or (user_choice == "scissors" and comp_choice == "paper")
+        or (user_choice == "paper" and comp_choice == "rock")
+    ):
+        document_result.append("win")
+        return 1  # player win
+    else:
+        document_result.append("lose")
+        return -1  # player lose
+
+
+# the learning rate, Just like in supervised learning settings
+alpha = 0.1
+# discount rate, closer to 1 captures long-term effective reward
+gamma = 0.6
+# Instead of just selecting the best learned Q-value action,
+# we'll sometimes favor exploring the action space further.
+# Lower epsilon value results in episodes with more penalties
+# (on average) which is obvious because we are exploring and
+# making random decisions.
+epsilon = 0.1
+
+q_table = {}
+options = ["rock", "paper", "scissors"]
+
+num_episodes = 100000
+for i in range(1, num_episodes):
+    epochs, reward = 0, 0
+    done = False
+
+    while not done:
+        if random(0, 1) < epsilon:
+            action = random.choice(options)
+        else:
+            action = np.argmax()
+
 
 ### visualising results
 x_var = np.linspace(0, num_episodes, num_episodes)
