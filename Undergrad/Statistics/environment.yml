@@ -1,0 +1,11 @@
+name: py3
+channels:
+  - conda-forge
+dependencies:
+  - matplotlib
+  - numpy
+  - resample
+  - pip
+  - pip:
+    - matplotlib
+    - scipy
