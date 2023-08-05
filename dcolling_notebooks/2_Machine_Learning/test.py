@@ -121,11 +121,11 @@ def game_loop(alpha, gamma, epsilon, num_episodes):
     return contin_reward
 
 
-alpha = 0.4  # learning rate
+alpha = 0.5  # learning rate
 gamma = 0.9  # discount factor
 epsilon = 0.3  # exploration rate
 a_decay_rate = 0.99
-g_decay_rate = 0.95
+g_decay_rate = 0.90
 e_decay_rate = 1 / num_episodes
 
 
