@@ -5,7 +5,7 @@ import pandas as pd
 
 states = ["rock", "paper", "scissors"]
 actions = ["rock", "paper", "scissors"]
-num_episodes = int(1e3)
+num_episodes = int(1e4)
 
 
 class QTable:
@@ -72,15 +72,40 @@ list_of_comp_input = []
 contin_reward = []
 
 
+# def game_loop(alpha, gamma, epsilon, num_episodes):
+#     total_reward = 0
+#     for episode in range(num_episodes):
+#         # Decay the hyperparameters
+#         alpha *= a_decay_rate
+#         gamma *= g_decay_rate
+#         epsilon *= np.exp(-e_decay_rate * episode)
+
+#         state = user_choice()
+#         action = comp_choice()
+
+#         # visualising results
+#         list_of_user_input.append(state)
+#         list_of_comp_input.append(action)
+#         reward_val = reward(state, action)
+#         total_reward += reward_val
+#         contin_reward.append(total_reward)
+
+#         next_state = comp_choice()  # Use the existing QTable instance
+#         # Use the existing QTable instance
+#         q_table.update_qvalue(state, action, next_state, reward_val, alpha, gamma)
+#         state = next_state
+#     return contin_reward
+
+
 def game_loop(alpha, gamma, epsilon, num_episodes):
     total_reward = 0
+    state = user_choice()  # Initialize the state before the loop
     for episode in range(num_episodes):
         # Decay the hyperparameters
         alpha *= a_decay_rate
         gamma *= g_decay_rate
         epsilon *= np.exp(-e_decay_rate * episode)
 
-        state = user_choice()
         action = comp_choice()
 
         # visualising results
@@ -90,10 +115,9 @@ def game_loop(alpha, gamma, epsilon, num_episodes):
         total_reward += reward_val
         contin_reward.append(total_reward)
 
-        next_state = comp_choice()  # Use the existing QTable instance
-        # Use the existing QTable instance
+        next_state = user_choice()  # Get the next state from the user's choice
         q_table.update_qvalue(state, action, next_state, reward_val, alpha, gamma)
-        state = next_state
+        state = next_state  # Update the current state for the next iteration
     return contin_reward
 
 
