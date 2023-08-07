@@ -51,6 +51,10 @@ def comp_choice():
 document_result = []
 
 
+def get_state(user_choice, comp_choice):
+    return (user_choice, comp_choice)
+
+
 def reward(user_choice, comp_choice):
     if user_choice == comp_choice:
         document_result.append("draw")
@@ -99,7 +103,7 @@ contin_reward = []
 
 def game_loop(alpha, gamma, epsilon, num_episodes):
     total_reward = 0
-    state = user_choice()  # Initialize the state before the loop
+    state = user_choice()  # Initialise the state before the loop
     for episode in range(num_episodes):
         # Decay the hyperparameters
         alpha *= a_decay_rate
