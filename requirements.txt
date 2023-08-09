@@ -112,7 +112,7 @@ Pillow==9.2.0
 platformdirs==2.5.2
 prometheus-client==0.17.1
 prompt-toolkit==3.0.30
-psutil==5.9.1
+psutil==5.9.5
 ptyprocess==0.7.0
 pure-eval==0.2.2
 pycparser==2.21
