@@ -1,12 +1,3 @@
-# To create an environment:
-# copy the text below into bash terminal
-# conda create -n ML_env python=3.9
-# conda activate ML_env
-
-# To install packages and dependencies:
-# copy the text below into bash terminal
-# pip install -r requirements.txt
-
 aioftp==0.21.3
 aiohttp==3.8.1
 aiosignal==1.2.0
