@@ -25,7 +25,6 @@ class QTable:
         next_max = max(
             [self.get_q_value(state, next_action) for next_action in self.actions]
         )
-        next_max = 0
         new_q_value = (1 - alpha) * old_q_value + alpha * (reward + gamma * next_max)
         self.q_table[(state, action)] = new_q_value
 
@@ -47,9 +46,6 @@ def comp_choice(state, epsilon):
     return action
 
 
-document_result = []
-
-
 def get_state(user_choice, comp_choice):
     return (user_choice, comp_choice)
 
@@ -65,6 +61,8 @@ results_dict = {
     ("scissors", "paper"): 1.0,
     ("scissors", "scissors"): 0.0,
 }
+
+document_result = []
 
 
 def reward(user_choice, comp_choice):
