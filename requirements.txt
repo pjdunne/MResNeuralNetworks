@@ -94,8 +94,6 @@ semantic-version==2.10.0
 six==1.16.0
 soupsieve==2.3.2.post1
 spiceypy==5.1.1
-spyder
-spyder-kernels
 SQLAlchemy==1.4.40
 stack-data==0.4.0
 sunpy
