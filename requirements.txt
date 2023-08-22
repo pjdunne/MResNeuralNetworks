@@ -98,6 +98,7 @@ SQLAlchemy==1.4.40
 stack-data==0.4.0
 sunpy
 sunpy-soar==1.4
+text-analysis-helpers
 tifffile==2022.8.12
 toolz==0.12.0
 tornado
