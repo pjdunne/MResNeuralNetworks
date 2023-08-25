@@ -55,7 +55,7 @@ mpl-animators==1.1.0
 multidict==6.0.2
 nest-asyncio==1.5.5
 networkx==2.8.5
-notebook==7.0.0
+notebook==6.5.4
 numpy==1.23.2
 openpyxl
 packaging==21.3
