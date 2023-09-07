@@ -96,7 +96,7 @@ soupsieve==2.3.2.post1
 spiceypy==5.1.1
 SQLAlchemy==1.4.40
 stack-data==0.4.0
-sunpy
+sunpy==4.0.4
 sunpy-soar==1.4
 text-analysis-helpers
 tifffile==2022.8.12
